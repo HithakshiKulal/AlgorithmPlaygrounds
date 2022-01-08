@@ -1,7 +1,7 @@
 func findNewIndex(row: Int, col: Int, size: Int) -> (Int, Int) {
     (size - 1 -  col, row)
 }
-func rotate(array: [[Int]], by k: Int) -> [[Int]] {
+func rotate(array: [[Int]]) -> [[Int]] {
     array.enumerated().map { (row, rowArray) in
         return rowArray.enumerated().map { (col, element) in
             let (row, col) = findNewIndex(row: row, col: col, size: rowArray.count)
@@ -17,4 +17,4 @@ var arr = [
 ]
 arr.forEach { print($0) }
 print()
-rotate(array: arr, by: 7).forEach { print($0) }
+rotate(array: arr).forEach { print($0) }
